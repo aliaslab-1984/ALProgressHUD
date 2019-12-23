@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		D9AEE4AF23855C3B00E8DDAD /* ALProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = D9AEE4AD23855C3B00E8DDAD /* ALProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D9AEE4B723855CCC00E8DDAD /* ALProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEE4B523855CCB00E8DDAD /* ALProgressHUD.swift */; };
+		D9AEE4B823855CCC00E8DDAD /* ALVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEE4B623855CCC00E8DDAD /* ALVisualEffectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D9AEE4AA23855C3B00E8DDAD /* ALProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ALProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9AEE4AD23855C3B00E8DDAD /* ALProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ALProgressHUD.h; sourceTree = "<group>"; };
 		D9AEE4AE23855C3B00E8DDAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9AEE4B523855CCB00E8DDAD /* ALProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALProgressHUD.swift; sourceTree = "<group>"; };
+		D9AEE4B623855CCC00E8DDAD /* ALVisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALVisualEffectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +50,8 @@
 		D9AEE4AC23855C3B00E8DDAD /* ALProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
+				D9AEE4B523855CCB00E8DDAD /* ALProgressHUD.swift */,
+				D9AEE4B623855CCC00E8DDAD /* ALVisualEffectView.swift */,
 				D9AEE4AD23855C3B00E8DDAD /* ALProgressHUD.h */,
 				D9AEE4AE23855C3B00E8DDAD /* Info.plist */,
 			);
@@ -95,6 +101,7 @@
 				TargetAttributes = {
 					D9AEE4A923855C3B00E8DDAD = {
 						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1110;
 					};
 				};
 			};
@@ -131,6 +138,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9AEE4B823855CCC00E8DDAD /* ALVisualEffectView.swift in Sources */,
+				D9AEE4B723855CCC00E8DDAD /* ALProgressHUD.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +269,7 @@
 		D9AEE4B323855C3B00E8DDAD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = G8T8XQ7RF6;
@@ -268,6 +278,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ALProgressHUD/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -276,6 +287,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.aliaslab.ALProgressHUD;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -284,6 +297,7 @@
 		D9AEE4B423855C3B00E8DDAD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = G8T8XQ7RF6;
@@ -292,6 +306,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ALProgressHUD/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,6 +315,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.aliaslab.ALProgressHUD;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
