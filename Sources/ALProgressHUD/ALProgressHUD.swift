@@ -28,13 +28,13 @@ public class ALProgressHUD: ALVisualEffectView {
     
     public required init(text: String = "", shadowing: Bool = false) {
         
-        activityIndicator = UIActivityIndicatorView(style: shadowing ? .white : .gray)
+        activityIndicator = UIActivityIndicatorView(style: .medium)
         super.init(text: text, shadowing: shadowing)
     }
     
     public required init(withLargeIndicator text: String = "") {
         
-        activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+        activityIndicator = UIActivityIndicatorView(style: .large)
         super.init(text: text, shadowing: true)
         
         largeIndicator = true
