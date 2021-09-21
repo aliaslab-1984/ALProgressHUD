@@ -13,23 +13,8 @@ import UIKit
 
 /**
  Progress HUD (Head Up Display)
- 
- Version 2.2
- 
- Changes:
- 
- **2.2**
- - LargeIndicator with text underneath it
- 
- **2.1**
- - `overApp()`
- - `layoutSubviews()` only when `isVisible`
- 
- **2.0**
- - inherits from `ALVisualEffectView`
- - VC should call `setNeedsLayout()` to resize the view after a rotaion of the device. If you want to update the layout of your views immediately, call the `layoutIfNeeded()` method.
  */
-class ALProgressHUD: ALVisualEffectView {
+public class ALProgressHUD: ALVisualEffectView {
     
     private let activityIndicator: UIActivityIndicatorView
     
@@ -37,17 +22,17 @@ class ALProgressHUD: ALVisualEffectView {
     
     private var largeIndicator = false
     
-    var isVisible: Bool {
+    public var isVisible: Bool {
         return activityIndicator.isAnimating
     }
     
-    required init(text: String = "", shadowing: Bool = false) {
+    public required init(text: String = "", shadowing: Bool = false) {
         
         activityIndicator = UIActivityIndicatorView(style: shadowing ? .white : .gray)
         super.init(text: text, shadowing: shadowing)
     }
     
-    required init(withLargeIndicator text: String = "") {
+    public required init(withLargeIndicator text: String = "") {
         
         activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
         super.init(text: text, shadowing: true)
@@ -55,7 +40,7 @@ class ALProgressHUD: ALVisualEffectView {
         largeIndicator = true
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -66,7 +51,7 @@ class ALProgressHUD: ALVisualEffectView {
      
     - Parameter view: the actual UIViewController's view
     */
-    func overApp(view: UIView) {
+    public func overApp(view: UIView) {
         
         let hidingView = UIView()
         hidingView.frame = view.bounds
@@ -77,12 +62,12 @@ class ALProgressHUD: ALVisualEffectView {
         view.addSubview(self)
     }
     
-    override func setup() {
+    public override func setup() {
         contentView.addSubview(activityIndicator)
         contentView.addSubview(label)
     }
     
-    override func didMoveToSuperview() {
+    public override func didMoveToSuperview() {
         
         super.didMoveToSuperview()
         
@@ -108,7 +93,7 @@ class ALProgressHUD: ALVisualEffectView {
         }
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         
         guard let superview = self.superview else {
             return

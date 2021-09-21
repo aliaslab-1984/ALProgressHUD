@@ -12,12 +12,12 @@
 
 import UIKit
 
-class ALVisualEffectView: UIVisualEffectView {
+public class ALVisualEffectView: UIVisualEffectView {
     
-    let label: UILabel = UILabel()
+    internal let label: UILabel = UILabel()
     
-    var textColor: UIColor
-    var text: String = "" {
+    public var textColor: UIColor
+    public var text: String = "" {
         didSet {
             label.text = text
         }
@@ -27,7 +27,7 @@ class ALVisualEffectView: UIVisualEffectView {
      - Parameter text: what to display
      - Parameter shadowing: true to have a lighter dialog (usually because there is a shadowing view under it)
      */
-    required init(text: String = "", shadowing: Bool = false) {
+    public required init(text: String = "", shadowing: Bool = false) {
         
         self.text = text
         textColor = shadowing ? .white : .gray
@@ -38,19 +38,19 @@ class ALVisualEffectView: UIVisualEffectView {
         self.setup()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup() {
+    public func setup() {
         contentView.addSubview(label)
     }
     
-    func show() {
+    public func show() {
         self.isHidden = false
     }
     
-    func hide() {
+    public func hide() {
         self.isHidden = true
     }
 }
